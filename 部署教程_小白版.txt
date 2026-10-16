@@ -1,0 +1,44 @@
+供应链看板部署教程（完全小白版）
+================================
+
+你只需要完成两件事：
+1. 把文件上传到 GitHub；
+2. 让 Streamlit 从 GitHub 读取并部署。
+
+第一部分：GitHub
+----------------
+1. 打开 https://github.com/ 注册账号。
+2. 登录后点击右上角“+”，选择 New repository。
+3. 名称填写 supply-chain-dashboard。
+4. 选择 Public，点击 Create repository。
+5. 在新页面点击 uploading an existing file。
+6. 解压本压缩包，将里面所有文件拖进去。
+7. 点击页面最下方 Commit changes。
+
+第二部分：Streamlit
+-------------------
+1. 打开 https://share.streamlit.io/
+2. 使用刚才的 GitHub 账号登录。
+3. 点击 Create app / Deploy an app。
+4. Repository 选择 supply-chain-dashboard。
+5. Branch 选择 main。
+6. Main file path 填 streamlit_app.py。
+7. Advanced settings 里建议选 Python 3.11。
+8. 点击 Deploy。
+
+等待几分钟后，你会获得一个可以发给别人的网址。
+
+常见问题
+--------
+1. 页面报 ModuleNotFoundError：
+   检查 requirements.txt 是否上传。
+
+2. 页面提示找不到供应链示例数据.xlsx：
+   检查该 Excel 是否与 streamlit_app.py 位于同一层。
+
+3. 上传真实 Excel 后报缺少字段：
+   先打开示例数据，参考“库存明细”和“物流明细”的列名。
+
+4. 企业真实库存数据是否适合放到公开网站：
+   不建议。当前原型适合放模拟或脱敏数据。
+   如需使用真实数据，应改为私有部署并增加登录与数据库权限。
